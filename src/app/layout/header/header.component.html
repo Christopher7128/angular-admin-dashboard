@@ -1,0 +1,18 @@
+<mat-toolbar class="main-tool-bar">
+
+    <span class="title">Admin Dashboard</span>
+    <span class="spacer"></span>
+
+    <button mat-button [ngClass]="{ 'active-link': isActive('/dashboard') }" (click)="router.navigate(['/dashboard'])">
+        Dashboard
+    </button>
+
+    <button mat-button [ngClass]="{ 'active-link': isActive('/users') }" (click)="router.navigate(['/users'])">
+        Users
+    </button>
+
+    <button mat-button [ngClass]="{ 'active-link': isActive('/reports') }" (click)="router.navigate(['/reports'])">
+        Reports
+    </button>
+
+</mat-toolbar>
