@@ -12,6 +12,8 @@ import { MaterialModule } from './shared/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UsersComponent } from './pages/users/users.component';
 import { ReportsComponent } from './pages/reports/reports.component';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,8 @@ import { ReportsComponent } from './pages/reports/reports.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
