@@ -1,19 +1,31 @@
-.main-tool-bar{
-    color: #F5F5F5;
-    background-color:#2073AD;
-    font-family: 'Manrope', sans-serif;
-    font-weight: 500;
+.main-tool-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: #2073AD;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* Hide mobile menu by default */
+.mobile-menu {
+  display: none;
 }
 
 
-  .spacer {
-    flex: 1 1 auto;
+/* Desktop menu visible by default */
+.desktop-menu button {
+  margin-right: 8px;
+}
+
+/* Responsive breakpoint: below 768px */
+@media (max-width: 768px) {
+  .desktop-menu {
+    display: none; // hide buttons
   }
-  
-  .title {
-    font-weight: 600;
+  .mobile-menu {
+    display: block; // show hamburger menu
   }
-  .active-link {
-    font-weight: 600;
-    border-bottom: 2px solid white;
-  }
+}
