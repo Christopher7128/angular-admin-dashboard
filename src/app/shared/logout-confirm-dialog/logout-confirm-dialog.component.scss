@@ -1,0 +1,17 @@
+.mat-dialog-container {
+  border-radius: 8px;       // smooth corners
+  padding: 20px 24px;       // nice spacing
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); // soft shadow
+  min-width: 320px;         // modern size
+}
+
+mat-dialog-content {
+  font-size: 14px;
+  color: #ffffff;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+mat-dialog-actions button {
+  min-width: 80px;
+}

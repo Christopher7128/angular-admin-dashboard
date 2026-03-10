@@ -30,10 +30,9 @@ export class HeaderComponent implements OnInit {
   }
 
 
-  logout() {
-
+logout() {
   const dialogRef = this.dialog.open(LogoutConfirmDialogComponent, {
-    width: '300px'
+    disableClose: true // prevent closing by clicking outside
   });
 
   dialogRef.afterClosed().subscribe(result => {
@@ -42,8 +41,6 @@ export class HeaderComponent implements OnInit {
       this.router.navigate(['/login']);
     }
   });
-
 }
-
 
 }
