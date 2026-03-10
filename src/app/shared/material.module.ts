@@ -11,7 +11,23 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { FormsModule } from '@angular/forms';
+import { LogoutConfirmDialogComponent } from './logout-confirm-dialog/logout-confirm-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
+  imports: [
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    FormsModule,
+    MatDialogModule
+  ],
   exports: [
     MatCardModule,
     MatFormFieldModule,
@@ -23,7 +39,11 @@ import { FormsModule } from '@angular/forms';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
+  ],
+  declarations: [
+    LogoutConfirmDialogComponent
   ]
 })
 export class MaterialModule { }

@@ -14,4 +14,15 @@
     <button mat-button [ngClass]="{ 'active-link': isActive('/reports') }" (click)="router.navigate(['/reports'])">
         Report
     </button>
+
+    <!-- LOGIN -->
+    <button mat-icon-button *ngIf="!authService.isLoggedIn()" (click)="router.navigate(['/login'])">
+        <mat-icon>login</mat-icon>
+    </button>
+
+    <!-- LOGOUT -->
+    <button mat-icon-button *ngIf="authService.isLoggedIn()" (click)="logout()">
+        <mat-icon>account_circle</mat-icon>
+    </button>
+
 </mat-toolbar>

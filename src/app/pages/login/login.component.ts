@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
   password: string = '';
 
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private route:Router) { }
 
   ngOnInit(): void {
   }
@@ -23,6 +24,7 @@ export class LoginComponent implements OnInit {
         next: (res: any) => {
           this.authService.saveToken(res.token);
           console.log('Login success');
+          this.route.navigate(['/dashboard'])
         },
         error: (err) => {
           console.log('Invalid credentials');
