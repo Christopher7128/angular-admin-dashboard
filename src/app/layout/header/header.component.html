@@ -1,42 +1,69 @@
-<mat-toolbar  class="main-tool-bar">
+<mat-toolbar class="main-tool-bar">
 
-  <span class="title">Admin Dashboard</span>
+  <span class="title">Profile</span>
   <span class="spacer"></span>
 
   <!-- Desktop menu -->
   <div class="desktop-menu">
-    <button mat-button [ngClass]="{ 'active-link': isActive('/dashboard') }" (click)="router.navigate(['/dashboard'])">
-      Dashboard
-    </button>
-    <button mat-button [ngClass]="{ 'active-link': isActive('/users') }" (click)="router.navigate(['/users'])">
-      Users
-    </button>
-    <button mat-button [ngClass]="{ 'active-link': isActive('/reports') }" (click)="router.navigate(['/reports'])">
-      Report
-    </button>
-    <button mat-icon-button *ngIf="!authService.isLoggedIn()" (click)="router.navigate(['/login'])">
-    <mat-icon>login</mat-icon>
-  </button>
 
-  <button mat-icon-button *ngIf="authService.isLoggedIn()" (click)="logout()">
-    <mat-icon>account_circle</mat-icon>
-  </button>
+    <button mat-button [ngClass]="{ 'active-link': isActive('/dashboard') }"
+      (click)="router.navigate(['/dashboard'])">
+      About
+    </button>
+
+    <button mat-button [ngClass]="{ 'active-link': isActive('/users') }"
+      (click)="router.navigate(['/users'])">
+      Projects
+    </button>
+
+    <button mat-button [ngClass]="{ 'active-link': isActive('/reports') }"
+      (click)="router.navigate(['/reports'])">
+      Experience
+    </button>
+
+    <!-- Login / Logout icons -->
+    <button mat-icon-button *ngIf="!authService.isLoggedIn()"
+      (click)="router.navigate(['/login'])">
+      <mat-icon>login</mat-icon>
+    </button>
+
+    <button mat-icon-button *ngIf="authService.isLoggedIn()"
+      (click)="logout()">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+
   </div>
-
-  <!-- Login / Logout Icons -->
-  
 
   <!-- Mobile menu -->
   <div class="mobile-menu">
     <button mat-icon-button [matMenuTriggerFor]="menu">
       <mat-icon>menu</mat-icon>
     </button>
+
     <mat-menu #menu="matMenu">
-      <button mat-menu-item (click)="router.navigate(['/dashboard'])">Dashboard</button>
-      <button mat-menu-item (click)="router.navigate(['/users'])">Users</button>
-      <button mat-menu-item (click)="router.navigate(['/reports'])">Report</button>
-      <button mat-menu-item *ngIf="!authService.isLoggedIn()" (click)="router.navigate(['/login'])">Login</button>
-      <button mat-menu-item *ngIf="authService.isLoggedIn()" (click)="logout()">Logout</button>
+
+      <button mat-menu-item (click)="router.navigate(['/dashboard'])">
+        About
+      </button>
+
+      <button mat-menu-item (click)="router.navigate(['/users'])">
+        Projects
+      </button>
+
+      <button mat-menu-item   (click)="router.navigate(['/reports'])">
+        Experience
+      </button>
+
+      <button mat-menu-item *ngIf="!authService.isLoggedIn()"
+        (click)="router.navigate(['/login'])">
+        Login
+      </button>
+
+      <button mat-menu-item *ngIf="authService.isLoggedIn()"
+        (click)="logout()">
+        Logout
+      </button>
+
     </mat-menu>
   </div>
 

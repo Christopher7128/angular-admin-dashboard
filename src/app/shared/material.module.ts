@@ -14,6 +14,8 @@ import { FormsModule } from '@angular/forms';
 import { LogoutConfirmDialogComponent } from './logout-confirm-dialog/logout-confirm-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatChipsModule } from '@angular/material/chips'
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 @NgModule({
   imports: [
     MatCardModule,
@@ -28,8 +30,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatSortModule,
     FormsModule,
     MatDialogModule,
-    MatMenuModule
-  ],
+    MatMenuModule, MatChipsModule
+  ,MatProgressBarModule],
   exports: [
     MatCardModule,
     MatFormFieldModule,
@@ -43,7 +45,9 @@ import { MatMenuModule } from '@angular/material/menu';
     MatSortModule,
     FormsModule,
     MatDialogModule,
-    MatMenuModule
+    MatMenuModule,
+    MatChipsModule,
+    MatProgressBarModule
   ],
   declarations: [
     LogoutConfirmDialogComponent
