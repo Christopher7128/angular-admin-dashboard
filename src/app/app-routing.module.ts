@@ -8,10 +8,30 @@ import { ReportsComponent } from './pages/reports/reports.component';
 const routes: Routes = [
 
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'users', component: UsersComponent },
-  { path: 'reports', component: ReportsComponent }
+
+  {
+    path: 'login',
+    component: LoginComponent,
+    data: { animation: 'LoginPage' }
+  },
+
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    data: { animation: 'DashboardPage' }
+  },
+
+  {
+    path: 'users',
+    component: UsersComponent,
+    data: { animation: 'ProjectsPage' }
+  },
+
+  {
+    path: 'reports',
+    component: ReportsComponent,
+    data: { animation: 'ExperiencePage' }
+  }
 
 ];
 
