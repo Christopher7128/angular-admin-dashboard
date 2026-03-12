@@ -1,8 +1,133 @@
-<div class="sidenav-container">
+<div class="experience-wrapper experience-wrapper">
 
+  <div class="page-title">
+    <h1>Professional Experience</h1>
+    <p>My journey as a Frontend Developer</p>
+  </div>
 
-    <div class="reports-content">
-        <h2>Report Overview</h2>
+  <div class="timeline">
+
+    <div class="timeline-item scroll-animate" *ngFor="let exp of experiences">
+
+      <div class="timeline-dot"></div>
+
+      <div class="experience-card">
+
+        <div class="card-header">
+
+          <div>
+            <h2>{{exp.role}}</h2>
+            <h3>{{exp.company}}</h3>
+          </div>
+
+          <span class="duration">{{exp.duration}}</span>
+
+        </div>
+
+        <!-- Projects -->
+        <div class="projects">
+
+          <h4>Projects</h4>
+
+          <div class="project-block" *ngFor="let project of exp.projects">
+
+            <div class="project-name">
+              {{project.name}}
+            </div>
+
+            <ul>
+              <li *ngFor="let r of project.responsibilities">
+                {{r}}
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+
+        <!-- Technologies -->
+        <div class="tech-stack">
+
+          <span *ngFor="let tech of exp.technologies">
+            {{tech}}
+          </span>
+
+        </div>
+
+      </div>
+
     </div>
 
+  </div>
+
 </div>
+
+<section class="impact-section scroll-animate">
+
+  <div class="impact-header">
+    <h2>Engineering Impact</h2>
+    <p>Key technical contributions and measurable improvements</p>
+  </div>
+
+  <div class="impact-grid">
+
+    <div class="impact-card scroll-animate">
+      <div class="impact-icon">⚡</div>
+      <p>
+        Integrated RESTful APIs using Angular services, RxJS, and HTTP interceptors;
+        reduced latency by <strong>35%</strong> and enabled real-time synchronization.
+      </p>
+    </div>
+
+    <div class="impact-card">
+      <div class="impact-icon">📊</div>
+      <p>
+        Implemented interactive drill-down charts using Chart.js with dynamic
+        nested data rendering (Item → Hub → Date → Farmer).
+      </p>
+    </div>
+
+    <div class="impact-card">
+      <div class="impact-icon">🧩</div>
+      <p>
+        Developed reusable global Angular components (Hub, Item, Supplier)
+        used across multiple modules for consistency and accessibility.
+      </p>
+    </div>
+
+    <div class="impact-card">
+      <div class="impact-icon">📱</div>
+      <p>
+        Converted legacy applications to mobile-first responsive design using
+        Angular Material, Bootstrap and Tailwind; improved load time by
+        <strong>40%</strong>.
+      </p>
+    </div>
+
+    <div class="impact-card">
+      <div class="impact-icon">🔄</div>
+      <p>
+        Implemented optimized component interaction using services,
+        ViewChild and trackBy; reduced DOM re-renders by <strong>30%</strong>.
+      </p>
+    </div>
+
+    <div class="impact-card">
+      <div class="impact-icon">🌐</div>
+      <p>
+        Built multilingual support using Angular i18n, Google Translate
+        and Azure APIs with seamless locale switching.
+      </p>
+    </div>
+
+    <div class="impact-card">
+      <div class="impact-icon">👨‍💻</div>
+      <p>
+        Led code reviews for 10+ developers; reduced production bugs by
+        <strong>25%</strong> and improved sprint velocity by <strong>20%</strong>.
+      </p>
+    </div>
+
+  </div>
+
+</section>
