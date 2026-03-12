@@ -1,9 +1,43 @@
-<div class="sidenav-container">
+<app-header></app-header>
 
-    <app-header></app-header>
+<div class="user-content">
+    <!-- projects.component.html -->
+    <div class="projects-container">
+        <div class="header">
+            <h1>My Project</h1>
+            <p>Projects and features I have developed</p>
+        </div>
 
-    <div class="user-content">
-        <h2>User Overview</h2>
+        <div class="projects-grid">
+
+            <div class="project-card" *ngFor="let project of projects">
+                <div class="card-top">
+                    <div class="icon">
+                        <mat-icon>code</mat-icon>
+                    </div>
+                    <div class="title-section">
+                        <h3>{{project.name}}</h3>
+                        <span class="role">{{project.role}}</span>
+                    </div>
+                </div>
+
+                <p class="description">
+                    {{project.description}}
+                </p>
+
+                <div class="tech-stack">
+                    <span *ngFor="let tech of project.tech">
+                        {{tech}}
+                    </span>
+                </div>
+
+                <div class="card-footer">
+                    <button mat-raised-button color="primary">View Details</button>
+                </div>
+            </div>
+
+        </div>
     </div>
 
-</div>
+
+    <!-- projects.component.scss -->
