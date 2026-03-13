@@ -4,7 +4,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { UsersComponent } from './pages/users/users.component';
 import { ReportsComponent } from './pages/reports/reports.component';
-
+import { WebsiteBuilderComponent } from './pages/website-builder/website-builder.component';
+import { HotelTemplateComponent } from './pages/hotel-template/hotel-template.component';
 const routes: Routes = [
   // default route
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -25,6 +26,8 @@ const routes: Routes = [
     component: ReportsComponent,
     data: { animation: 'ExperiencePage' }
   },
+  { path: 'website-builder', component: WebsiteBuilderComponent, data: { animation: 'ExperiencePage' } },
+  { path: 'hotel-template', component: HotelTemplateComponent, data: { animation: 'ExperiencePage' } },
 
   // catch-all (optional)
   { path: '**', redirectTo: 'dashboard' }

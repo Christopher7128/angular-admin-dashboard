@@ -16,6 +16,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatChipsModule } from '@angular/material/chips'
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatDividerModule } from '@angular/material/divider';
 @NgModule({
   imports: [
     MatCardModule,
@@ -30,7 +31,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatSortModule,
     FormsModule,
     MatDialogModule,
-    MatMenuModule, MatChipsModule
+    MatMenuModule, MatChipsModule,MatDividerModule
   ,MatProgressBarModule],
   exports: [
     MatCardModule,
@@ -46,7 +47,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     FormsModule,
     MatDialogModule,
     MatMenuModule,
-    MatChipsModule,
+    MatChipsModule,MatDividerModule,
     MatProgressBarModule
   ],
   declarations: [

@@ -13,6 +13,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { UsersComponent } from './pages/users/users.component';
 import { ReportsComponent } from './pages/reports/reports.component';
 import { HttpClientModule } from '@angular/common/http';
+import { WebsiteBuilderComponent } from './pages/website-builder/website-builder.component';
+import { HotelTemplateComponent } from './pages/hotel-template/hotel-template.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { HttpClientModule } from '@angular/common/http';
     SidebarComponent,
     HeaderComponent,
     UsersComponent,
-    ReportsComponent
+    ReportsComponent,
+    WebsiteBuilderComponent,
+    HotelTemplateComponent
   ],
   imports: [
     BrowserModule,

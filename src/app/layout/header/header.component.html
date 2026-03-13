@@ -19,16 +19,21 @@
             Experience
         </button>
 
-        <!-- Login / Logout icons -->
-        <!-- <button mat-icon-button *ngIf="!authService.isLoggedIn()"
-      (click)="router.navigate(['/login'])">
-      <mat-icon>login</mat-icon>
-    </button>
+        <button mat-button [matMenuTriggerFor]="websiteMenu">
+            Website Designs
+        </button>
 
-    <button mat-icon-button *ngIf="authService.isLoggedIn()"
-      (click)="logout()">
-      <mat-icon>account_circle</mat-icon>
-    </button> -->
+        <mat-menu #websiteMenu="matMenu">
+
+            <button mat-menu-item (click)="router.navigate(['/website-builder'])">
+                Website Builder
+            </button>
+
+            <button mat-menu-item (click)="router.navigate(['/hotel-template'])">
+                Hotel / Restaurant
+            </button>
+
+        </mat-menu>
 
     </div>
 
@@ -52,7 +57,31 @@
                 Experience
             </button>
 
-            <!-- <button mat-menu-item *ngIf="!authService.isLoggedIn()"
+
+            <mat-divider></mat-divider>
+
+            <button mat-menu-item [matMenuTriggerFor]="mobileWebsiteMenu">
+                Website Designs
+            </button>
+
+            <mat-menu #mobileWebsiteMenu="matMenu">
+
+                <button mat-menu-item (click)="router.navigate(['/website-builder'])">
+                    Website Builder
+                </button>
+
+                <button mat-menu-item (click)="router.navigate(['/hotel-template'])">
+                    Hotel / Restaurant
+                </button>
+
+            </mat-menu>
+        </mat-menu>
+    </div>
+
+</mat-toolbar>
+
+
+<!-- <button mat-menu-item *ngIf="!authService.isLoggedIn()"
         (click)="router.navigate(['/login'])">
         Login
       </button>
@@ -61,8 +90,3 @@
         (click)="logout()">
         Logout
       </button> -->
-
-        </mat-menu>
-    </div>
-
-</mat-toolbar>
