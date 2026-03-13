@@ -6,33 +6,28 @@ import { UsersComponent } from './pages/users/users.component';
 import { ReportsComponent } from './pages/reports/reports.component';
 
 const routes: Routes = [
+  // default route
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
 
-  { path: '', redirectTo: 'DashboardPage', pathMatch: 'full' },
-
-  // {
-  //   path: 'login',
-  //   component: LoginComponent,
-  //   data: { animation: 'LoginPage' }
-  // },
-
+  // actual pages
   {
-    path: '',
+    path: 'dashboard',
     component: DashboardComponent,
     data: { animation: 'DashboardPage' }
   },
-
   {
     path: 'users',
     component: UsersComponent,
     data: { animation: 'ProjectsPage' }
   },
-
   {
     path: 'reports',
     component: ReportsComponent,
     data: { animation: 'ExperiencePage' }
-  }
+  },
 
+  // catch-all (optional)
+  { path: '**', redirectTo: 'dashboard' }
 ];
 
 @NgModule({

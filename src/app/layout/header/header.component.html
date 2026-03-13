@@ -1,28 +1,26 @@
 <mat-toolbar class="main-tool-bar">
 
-  <span class="title">Profile</span>
-  <span class="spacer"></span>
+    <span class="title">Profile</span>
+    <span class="spacer"></span>
 
-  <!-- Desktop menu -->
-  <div class="desktop-menu">
+    <!-- Desktop menu -->
+    <div class="desktop-menu">
 
-    <button mat-button [ngClass]="{ 'active-link': isActive('/dashboard') }"
-      (click)="router.navigate(['/dashboard'])">
-      About
-    </button>
+        <button mat-button [ngClass]="{ 'active-link': isActive('/dashboard') }"
+            (click)="router.navigate(['/dashboard'])">
+            About
+        </button>
 
-    <button mat-button [ngClass]="{ 'active-link': isActive('/users') }"
-      (click)="router.navigate(['/users'])">
-      Projects
-    </button>
+        <button mat-button [ngClass]="{ 'active-link': isActive('/users') }" (click)="router.navigate(['/users'])">
+            Projects
+        </button>
 
-    <button mat-button [ngClass]="{ 'active-link': isActive('/reports') }"
-      (click)="router.navigate(['/reports'])">
-      Experience
-    </button>
+        <button mat-button [ngClass]="{ 'active-link': isActive('/reports') }" (click)="router.navigate(['/reports'])">
+            Experience
+        </button>
 
-    <!-- Login / Logout icons -->
-    <!-- <button mat-icon-button *ngIf="!authService.isLoggedIn()"
+        <!-- Login / Logout icons -->
+        <!-- <button mat-icon-button *ngIf="!authService.isLoggedIn()"
       (click)="router.navigate(['/login'])">
       <mat-icon>login</mat-icon>
     </button>
@@ -32,29 +30,29 @@
       <mat-icon>account_circle</mat-icon>
     </button> -->
 
-  </div>
+    </div>
 
-  <!-- Mobile menu -->
-  <div class="mobile-menu">
-    <button mat-icon-button [matMenuTriggerFor]="menu">
-      <mat-icon>menu</mat-icon>
-    </button>
+    <!-- Mobile menu -->
+    <div class="mobile-menu">
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>menu</mat-icon>
+        </button>
 
-    <mat-menu #menu="matMenu">
+        <mat-menu #menu="matMenu">
 
-      <button mat-menu-item (click)="router.navigate(['/dashboard'])">
-        About
-      </button>
+            <button mat-menu-item (click)="router.navigate(['/dashboard'])">
+                About
+            </button>
 
-      <button mat-menu-item (click)="router.navigate(['/users'])">
-        Projects
-      </button>
+            <button mat-menu-item (click)="router.navigate(['/users'])">
+                Projects
+            </button>
 
-      <button mat-menu-item   (click)="router.navigate(['/reports'])">
-        Experience
-      </button>
+            <button mat-menu-item (click)="router.navigate(['/reports'])">
+                Experience
+            </button>
 
-      <!-- <button mat-menu-item *ngIf="!authService.isLoggedIn()"
+            <!-- <button mat-menu-item *ngIf="!authService.isLoggedIn()"
         (click)="router.navigate(['/login'])">
         Login
       </button>
@@ -64,7 +62,7 @@
         Logout
       </button> -->
 
-    </mat-menu>
-  </div>
+        </mat-menu>
+    </div>
 
 </mat-toolbar>
