@@ -7,7 +7,7 @@ import { ReportsComponent } from './pages/reports/reports.component';
 
 const routes: Routes = [
 
-  // { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'DashboardPage', pathMatch: 'full' },
 
   // {
   //   path: 'login',
@@ -16,7 +16,7 @@ const routes: Routes = [
   // },
 
   {
-    path: 'dashboard',
+    path: '',
     component: DashboardComponent,
     data: { animation: 'DashboardPage' }
   },
