@@ -22,7 +22,7 @@
     </button>
 
     <!-- Login / Logout icons -->
-    <button mat-icon-button *ngIf="!authService.isLoggedIn()"
+    <!-- <button mat-icon-button *ngIf="!authService.isLoggedIn()"
       (click)="router.navigate(['/login'])">
       <mat-icon>login</mat-icon>
     </button>
@@ -30,7 +30,7 @@
     <button mat-icon-button *ngIf="authService.isLoggedIn()"
       (click)="logout()">
       <mat-icon>account_circle</mat-icon>
-    </button>
+    </button> -->
 
   </div>
 
@@ -54,7 +54,7 @@
         Experience
       </button>
 
-      <button mat-menu-item *ngIf="!authService.isLoggedIn()"
+      <!-- <button mat-menu-item *ngIf="!authService.isLoggedIn()"
         (click)="router.navigate(['/login'])">
         Login
       </button>
@@ -62,7 +62,7 @@
       <button mat-menu-item *ngIf="authService.isLoggedIn()"
         (click)="logout()">
         Logout
-      </button>
+      </button> -->
 
     </mat-menu>
   </div>
