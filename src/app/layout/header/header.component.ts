@@ -42,5 +42,7 @@ logout() {
     }
   });
 }
-
+goToContact() {
+  this.router.navigate(['/contact']);
+}
 }

@@ -6,6 +6,8 @@ import { UsersComponent } from './pages/users/users.component';
 import { ReportsComponent } from './pages/reports/reports.component';
 import { WebsiteBuilderComponent } from './pages/website-builder/website-builder.component';
 import { HotelTemplateComponent } from './pages/hotel-template/hotel-template.component';
+import { ContactDetailsComponent } from './pages/contact-details/contact-details.component';
+
 const routes: Routes = [
   // default route
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -25,6 +27,12 @@ const routes: Routes = [
     path: 'reports',
     component: ReportsComponent,
     data: { animation: 'ExperiencePage' }
+  },
+  {
+    path: 'contact',
+    component: ContactDetailsComponent,
+    data: { animation: 'ExperiencePage' }
+
   },
   { path: 'website-builder', component: WebsiteBuilderComponent, data: { animation: 'ExperiencePage' } },
   { path: 'hotel-template', component: HotelTemplateComponent, data: { animation: 'ExperiencePage' } },

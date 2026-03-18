@@ -22,6 +22,9 @@
         <button mat-button [matMenuTriggerFor]="websiteMenu">
             Website Designs
         </button>
+        <button mat-button [ngClass]="{ 'active-link': isActive('/contact') }" (click)="goToContact()">
+            Contact
+        </button>
 
         <mat-menu #websiteMenu="matMenu">
 
@@ -57,7 +60,9 @@
                 Experience
             </button>
 
-
+            <button mat-menu-item  (click)="goToContact()">
+                Contact
+            </button>
             <mat-divider></mat-divider>
 
             <button mat-menu-item [matMenuTriggerFor]="mobileWebsiteMenu">
