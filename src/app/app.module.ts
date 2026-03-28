@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { WebsiteBuilderComponent } from './pages/website-builder/website-builder.component';
 import { HotelTemplateComponent } from './pages/hotel-template/hotel-template.component';
 import { ContactDetailsComponent } from './pages/contact-details/contact-details.component';
+import { CorporateTemplateComponent } from './pages/corporate-template/corporate-template.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ContactDetailsComponent } from './pages/contact-details/contact-details
     ReportsComponent,
     WebsiteBuilderComponent,
     HotelTemplateComponent,
-    ContactDetailsComponent
+    ContactDetailsComponent,
+    CorporateTemplateComponent
   ],
   imports: [
     BrowserModule,

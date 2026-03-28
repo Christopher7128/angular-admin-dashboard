@@ -1,0 +1,498 @@
+<!-- ═══ HEADER ═══ -->
+<header id="header" [style.box-shadow]="headerShadow">
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-icon">AW</div>
+      <div class="logo-text">All<span>Works</span></div>
+    </div>
+
+    <nav>
+      <a [class.active]="isActivePage('home')"    (click)="showPage('home')">Home</a>
+      <a [class.active]="isActivePage('services')" (click)="showPage('services')">Services</a>
+      <a [class.active]="isActivePage('about')"   (click)="showPage('about')">About Us</a>
+      <a [class.active]="isActivePage('contact')" (click)="showPage('contact')">Contact</a>
+      <a href="tel:+919876543210" class="nav-cta">📞 Call Now</a>
+    </nav>
+
+    <div class="hamburger" (click)="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <div class="mobile-menu" [class.open]="isMobileMenuOpen">
+    <a (click)="showPage('home')">🏠 Home</a>
+    <a (click)="showPage('services')">🔧 Services</a>
+    <a (click)="showPage('about')">👥 About Us</a>
+    <a (click)="showPage('contact')">📍 Contact</a>
+    <a href="tel:+919876543210" class="nav-cta">📞 Call Now – Free Quote</a>
+  </div>
+</header>
+
+<!-- ═══ HOME PAGE ═══ -->
+<div class="page" [class.active]="isActivePage('home')">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="dot"></span> Available 24/7 – Same Day Service
+        </div>
+        <h1 class="hero-title">
+          Your Trusted Partner for <span>Every Fix</span> at Home & Work
+        </h1>
+        <p class="hero-text">
+          Plumbing leaks? Electrical faults? Machine breakdowns? AllWorks sends
+          certified technicians to your door — fast, affordable, and guaranteed.
+        </p>
+        <div class="hero-btns">
+          <a href="tel:+919876543210" class="btn btn-orange">📞 Call Now – It's Free</a>
+          <a href="https://wa.me/919876543210" class="btn btn-green" target="_blank">💬 WhatsApp Us</a>
+          <a class="btn btn-outline" (click)="showPage('contact')">Get Free Quote</a>
+        </div>
+        <div class="hero-trust">
+          <div class="trust-item"><span>✅</span> Certified Technicians</div>
+          <div class="trust-item"><span>⚡</span> Response in 30 Mins</div>
+          <div class="trust-item"><span>🛡️</span> Work Guaranteed</div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="stat-card"><div class="num">12<span>+</span></div><div class="lbl">Years of Experience</div></div>
+        <div class="stat-card"><div class="num">8K<span>+</span></div><div class="lbl">Projects Done</div></div>
+        <div class="stat-card"><div class="num">500<span>+</span></div><div class="lbl">Happy Clients</div></div>
+        <div class="stat-card"><div class="num">4.9<span>★</span></div><div class="lbl">Average Rating</div></div>
+        <div class="stat-card wide">
+          <div class="num">⚡ 30-Minute Response Guarantee</div>
+          <div class="lbl">We reach you faster than anyone else</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-pill"><span>🔒</span> Licensed & Insured</div>
+      <div class="trust-pill"><span>🏆</span> ISO Certified</div>
+      <div class="trust-pill"><span>💯</span> Satisfaction Guaranteed</div>
+      <div class="trust-pill"><span>📅</span> Same-Day Bookings</div>
+      <div class="trust-pill"><span>💳</span> Transparent Pricing</div>
+      <div class="trust-pill"><span>🌙</span> 24/7 Emergency Service</div>
+    </div>
+  </div>
+
+  <!-- SERVICES OVERVIEW -->
+  <section class="section-services">
+    <div class="container">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">One Call, All Solutions</h2>
+      <p class="section-sub">From a dripping tap to a full factory overhaul — AllWorks handles every maintenance need.</p>
+
+      <div class="services-grid">
+        <div class="service-card" *ngFor="let svc of services" (click)="showPage('services')">
+          <div class="svc-icon">{{ svc.icon }}</div>
+          <div class="svc-name">{{ svc.name }}</div>
+          <div class="svc-desc">{{ svc.desc }}</div>
+          <div class="svc-tags">
+            <span class="svc-tag" *ngFor="let tag of svc.tags">{{ tag }}</span>
+          </div>
+          <a class="svc-link" (click)="showPage('services')">View Details →</a>
+        </div>
+      </div>
+
+      <div class="section-cta">
+        <a href="tel:+919876543210" class="btn btn-orange">📞 Book a Technician Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMERGENCY BANNER -->
+  <div class="emergency-banner">
+    <div class="emergency-inner">
+      <div class="emergency-left">
+        <div class="emergency-icon">🚨</div>
+        <div class="emergency-text">
+          <h3>Emergency? We're On The Way.</h3>
+          <p>Burst pipe, total power outage, machine breakdown — call us right now, 24 hours a day.</p>
+        </div>
+      </div>
+      <div class="emergency-right">
+        <a href="tel:+919876543210" class="btn btn-white">📞 Emergency Call</a>
+        <a href="https://wa.me/919876543210" class="btn btn-green" target="_blank">💬 WhatsApp SOS</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY CHOOSE US -->
+  <section class="section-why">
+    <div class="container">
+      <div class="section-label why-label">Why AllWorks</div>
+      <h2 class="section-title white">Why Thousands Choose Us</h2>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">⚡</div>
+          <div class="why-title">Fast Response</div>
+          <div class="why-text">Dispatched within 15 minutes. We reach you in 30 minutes — or the call-out fee is waived.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🎓</div>
+          <div class="why-title">Certified Technicians</div>
+          <div class="why-text">Every technician is licensed, background-verified, and trained to national safety standards.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">💰</div>
+          <div class="why-title">Honest Pricing</div>
+          <div class="why-text">You get a clear quote before work starts. No hidden charges. No surprise invoices.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🛡️</div>
+          <div class="why-title">Guaranteed Work</div>
+          <div class="why-text">All repairs come with a 90-day workmanship warranty. If it breaks again, we fix it free.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🌙</div>
+          <div class="why-title">24/7 Availability</div>
+          <div class="why-text">Emergencies don't follow business hours. Neither do we — day, night, weekends, holidays.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🌍</div>
+          <div class="why-title">Wide Coverage</div>
+          <div class="why-text">Serving homes, offices, factories across 15+ cities in India.</div>
+        </div>
+      </div>
+      <div class="section-cta">
+        <a href="https://wa.me/919876543210" class="btn btn-green" target="_blank">💬 Chat on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section-testimonials">
+    <div class="container">
+      <div class="section-label">Customer Reviews</div>
+      <h2 class="section-title">Real People. Real Results.</h2>
+      <div class="testi-grid">
+        <div class="testi-card" *ngFor="let t of testimonials">
+          <div class="stars">
+            <span *ngFor="let s of getStars(t.stars)">★</span>
+          </div>
+          <div class="testi-text">{{ t.text }}</div>
+          <div class="testi-author">
+            <div class="testi-avatar">{{ t.initials }}</div>
+            <div>
+              <div class="testi-name">{{ t.name }}</div>
+              <div class="testi-role">{{ t.role }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-faq">
+    <div class="container">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Common Questions</h2>
+      <div class="faq-list">
+        <div
+          class="faq-item"
+          *ngFor="let faq of faqs; let i = index"
+          [class.open]="isFaqOpen(i)"
+        >
+          <div class="faq-q" (click)="toggleFaq(i)">
+            {{ faq.question }}
+            <span class="arrow">▾</span>
+          </div>
+          <div class="faq-a">{{ faq.answer }}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <div class="final-cta">
+    <div class="container">
+      <h2>Stop Worrying. Start Fixing.</h2>
+      <p>Same-day service. Certified technicians. Guaranteed results.</p>
+      <div class="final-cta-btns">
+        <a href="tel:+919876543210" class="btn btn-white">📞 Call +91 98765 43210</a>
+        <a href="https://wa.me/919876543210" class="btn btn-green" target="_blank">💬 WhatsApp for Quote</a>
+        <a class="btn btn-outline" (click)="showPage('contact')">📝 Contact Form</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SERVICES PAGE ═══ -->
+<div class="page" [class.active]="isActivePage('services')">
+  <section class="page-hero">
+    <div class="container">
+      <div class="section-label light-label">Our Services</div>
+      <h1>Expert Solutions for Every Problem</h1>
+      <p>From small leaks to large industrial plants — fast, clean, guaranteed work.</p>
+    </div>
+  </section>
+
+  <section class="section-services-detail">
+    <div class="container">
+      <div class="svc-detail-grid">
+        <div class="svc-detail-card blue-head">
+          <div class="svc-detail-head">
+            <div class="svc-detail-icon">🔧</div>
+            <h3>Plumbing Services</h3>
+            <p>No more water damage, leaks, or blocked drains.</p>
+          </div>
+          <div class="svc-detail-body">
+            <h4>Problems We Solve</h4>
+            <ul>
+              <li>Burst or leaking pipes</li>
+              <li>Blocked drains & sewage overflow</li>
+              <li>Water heater installation & repair</li>
+              <li>Tap, valve & toilet replacements</li>
+              <li>Overhead tank & pump servicing</li>
+            </ul>
+            <div class="svc-detail-cta">
+              <a href="tel:+919876543210" class="btn btn-orange btn-sm">📞 Book Now</a>
+              <a href="https://wa.me/919876543210" class="btn btn-green btn-sm" target="_blank">💬 WhatsApp</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="svc-detail-card indigo-head">
+          <div class="svc-detail-head">
+            <div class="svc-detail-icon">⚡</div>
+            <h3>Electrical Wiring</h3>
+            <p>Safe, certified electrical solutions for all properties.</p>
+          </div>
+          <div class="svc-detail-body">
+            <h4>Problems We Solve</h4>
+            <ul>
+              <li>Short circuits & power tripping</li>
+              <li>New wiring & rewiring projects</li>
+              <li>MCB / Switchboard upgrades</li>
+              <li>Fan, AC & appliance installation</li>
+              <li>Solar & inverter connections</li>
+            </ul>
+            <div class="svc-detail-cta">
+              <a href="tel:+919876543210" class="btn btn-orange btn-sm">📞 Book Now</a>
+              <a href="https://wa.me/919876543210" class="btn btn-green btn-sm" target="_blank">💬 WhatsApp</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="svc-detail-card teal-head">
+          <div class="svc-detail-head">
+            <div class="svc-detail-icon">🏭</div>
+            <h3>Industrial Maintenance</h3>
+            <p>Minimise downtime. Maximise output.</p>
+          </div>
+          <div class="svc-detail-body">
+            <h4>Problems We Solve</h4>
+            <ul>
+              <li>Machine breakdown & emergency repair</li>
+              <li>Annual Maintenance Contracts (AMC)</li>
+              <li>Preventive maintenance scheduling</li>
+              <li>Hydraulic & pneumatic systems</li>
+              <li>HVAC & cooling tower maintenance</li>
+            </ul>
+            <div class="svc-detail-cta">
+              <a href="tel:+919876543210" class="btn btn-orange btn-sm">📞 Call for AMC Quote</a>
+              <a href="https://wa.me/919876543210" class="btn btn-green btn-sm" target="_blank">💬 WhatsApp</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="svc-detail-card slate-head">
+          <div class="svc-detail-head">
+            <div class="svc-detail-icon">🏠</div>
+            <h3>General Repairs</h3>
+            <p>Your all-in-one handyman service.</p>
+          </div>
+          <div class="svc-detail-body">
+            <h4>Problems We Solve</h4>
+            <ul>
+              <li>Furniture assembly & carpentry</li>
+              <li>Painting (interior & exterior)</li>
+              <li>Tile, flooring & waterproofing</li>
+              <li>Door, window & lock repairs</li>
+              <li>Home appliance repair</li>
+            </ul>
+            <div class="svc-detail-cta">
+              <a href="tel:+919876543210" class="btn btn-orange btn-sm">📞 Book Now</a>
+              <a href="https://wa.me/919876543210" class="btn btn-green btn-sm" target="_blank">💬 WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══ ABOUT PAGE ═══ -->
+<div class="page" [class.active]="isActivePage('about')">
+  <section class="page-hero">
+    <div class="container">
+      <div class="section-label light-label">About AllWorks</div>
+      <h1>Built on Trust. Driven by Results.</h1>
+      <p>12 years of fixing what matters — for homeowners, businesses, and industry.</p>
+    </div>
+  </section>
+
+  <section class="section-about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual">
+          <div class="about-block navy"><div class="big">12+</div><div class="sm">Years in Business</div></div>
+          <div class="about-block orange"><div class="big">8K+</div><div class="sm">Projects Completed</div></div>
+          <div class="about-block teal"><div class="big">500+</div><div class="sm">Happy Clients</div></div>
+          <div class="about-block blue"><div class="big">50+</div><div class="sm">Skilled Technicians</div></div>
+        </div>
+        <div class="about-text">
+          <div class="section-label">Our Story</div>
+          <h2 class="section-title">From One Van to a National Team</h2>
+          <p>AllWorks was founded in 2012 with a single mission: give homeowners and business owners access to fast, honest, and reliable maintenance services. What started with two technicians in Chennai has grown into a team of 50+ certified professionals serving 15+ cities.</p>
+          <div class="about-values">
+            <div class="val-item"><div class="val-icon">🛡️</div><div class="val-title">Safety First</div><div class="val-text">All work follows BIS and CPWD safety standards</div></div>
+            <div class="val-item"><div class="val-icon">⭐</div><div class="val-title">Quality Always</div><div class="val-text">We use only certified parts and materials</div></div>
+            <div class="val-item"><div class="val-icon">🤝</div><div class="val-title">Honest Dealings</div><div class="val-text">Transparent pricing, no upselling</div></div>
+            <div class="val-item"><div class="val-icon">🚀</div><div class="val-title">Reliability</div><div class="val-text">We show up on time. Every single time.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══ CONTACT PAGE ═══ -->
+<div class="page" [class.active]="isActivePage('contact')">
+  <section class="page-hero">
+    <div class="container">
+      <div class="section-label light-label">Get In Touch</div>
+      <h1>We're Ready. Are You?</h1>
+      <p>Call, WhatsApp, or fill the form. We respond within 15 minutes.</p>
+    </div>
+  </section>
+
+  <section class="section-contact">
+    <div class="container">
+      <div class="contact-grid">
+
+        <div class="contact-info">
+          <div class="contact-card">
+            <div class="contact-card-icon blue-icon">📞</div>
+            <div class="contact-card-text">
+              <h4>Call Us Directly</h4>
+              <a href="tel:+919876543210">+91 98765 43210</a>
+              <p>Available 24/7 – including holidays</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-icon green-icon">💬</div>
+            <div class="contact-card-text">
+              <h4>WhatsApp Us</h4>
+              <a href="https://wa.me/919876543210" target="_blank">+91 98765 43210</a>
+              <p>Send photos for faster diagnosis</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-icon orange-icon">📧</div>
+            <div class="contact-card-text">
+              <h4>Email</h4>
+              <a href="mailto:hello@allworks.in">hello@allworks.in</a>
+              <p>For quotes, AMC enquiries & invoices</p>
+            </div>
+          </div>
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d497698.9974194146!2d79.87975354999999!3d13.047478649999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265ea4f7d3361%3A0x6e61a70b6863d433!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1711000000000!5m2!1sen!2sin"
+              width="100%" height="220" style="border:0"
+              allowfullscreen="" loading="lazy">
+            </iframe>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <h3>Get a Free Quote</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name *</label>
+              <input type="text" [(ngModel)]="formData.name" placeholder="Ramesh Kumar" />
+            </div>
+            <div class="form-group">
+              <label>Phone Number *</label>
+              <input type="tel" [(ngModel)]="formData.phone" placeholder="+91 98765 43210" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Service Needed *</label>
+            <select [(ngModel)]="formData.service">
+              <option value="">-- Select a Service --</option>
+              <option *ngFor="let opt of serviceOptions" [value]="opt">{{ opt }}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea [(ngModel)]="formData.message" rows="4" placeholder="Describe your problem..."></textarea>
+          </div>
+          <button class="btn btn-orange btn-full" (click)="submitForm()">📩 Send My Request</button>
+          <p class="form-note">⚡ We respond within 15 minutes · Your info is safe</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-grid container">
+    <div class="footer-brand">
+      <div class="logo">
+        <div class="logo-icon">AW</div>
+        <div class="logo-text">All<span>Works</span></div>
+      </div>
+      <p>India's trusted maintenance partner for homes, offices, and factories.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a (click)="showPage('services')">Plumbing</a></li>
+        <li><a (click)="showPage('services')">Electrical Wiring</a></li>
+        <li><a (click)="showPage('services')">Industrial Maintenance</a></li>
+        <li><a (click)="showPage('services')">General Repairs</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a (click)="showPage('about')">About Us</a></li>
+        <li><a (click)="showPage('home')">Testimonials</a></li>
+        <li><a (click)="showPage('contact')">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+919876543210">📞 +91 98765 43210</a></li>
+        <li><a href="https://wa.me/919876543210" target="_blank">💬 WhatsApp</a></li>
+        <li><a href="mailto:hello@allworks.in">📧 hello@allworks.in</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom container">
+    <span>© 2024 AllWorks. All rights reserved.</span>
+  </div>
+</footer>
+
+<!-- ═══ FLOATING BUTTONS ═══ -->
+<div class="float-group">
+  <a href="https://wa.me/919876543210" class="float-btn float-wa" target="_blank">💬</a>
+  <a href="tel:+919876543210" class="float-btn float-call">📞</a>
+</div>
+
+<!-- ═══ TOAST ═══ -->
+<div class="toast" [class.show]="showToast">
+  ✅ Request sent! We'll call you within 15 minutes.
+</div>
